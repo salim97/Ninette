@@ -84,7 +84,7 @@ Item {
         to: 1000
         stepSize: 5
         onValueChanged:
-            grafcet.D3 = secu_reperage.value*10
+            grafcet.D3 = secu_reperage.value
     }
 
     SpinBox {
@@ -113,7 +113,8 @@ Item {
         to: 5000
         stepSize: 5
         onValueChanged:
-            grafcet.D6 = secu_etiq.value*10
+            grafcet.D6 = secu_etiq.value
+
     }
 
     SpinBox {
