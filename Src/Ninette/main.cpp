@@ -111,5 +111,7 @@ QQmlApplicationEngine engine;
 
         delete _mySettings;
 
+        qDebug() <<"Merci";
+
         return returnval;
 }
