@@ -110,8 +110,8 @@ Item {
             y: 132
             width: 135
             height: 61
-            from: 20
-            value: 20
+            from: 0
+            value: 0
             to: 5000
             stepSize: 5
             onValueChanged:
