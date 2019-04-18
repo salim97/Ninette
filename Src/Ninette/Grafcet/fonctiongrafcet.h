@@ -47,17 +47,17 @@ public:
         myGPIO= gpio;}
 
     //zones mémoires D
-    AUTO_PROPERTY(int , D1) // temps retard detect
-    AUTO_PROPERTY(int , D2) // temps retard reperage
-    AUTO_PROPERTY(int , D3) // temps secu reperage
+    AUTO_PROPERTY_SETTINGS(int , D1) // temps retard detect
+    AUTO_PROPERTY_SETTINGS(int , D2) // temps retard reperage
+    AUTO_PROPERTY_SETTINGS(int , D3) // temps secu reperage
     AUTO_PROPERTY_SETTINGS(int , D4) // temps retard etiq 1
-    AUTO_PROPERTY(int , D5) // temprs retard etiq 2
-    AUTO_PROPERTY(int , D6) // temps secu etiq
+    AUTO_PROPERTY_SETTINGS(int , D5) // temprs retard etiq 2
+    AUTO_PROPERTY_SETTINGS(int , D6) // temps secu etiq
     AUTO_PROPERTY_SETTINGS(int , D7) // temps arret etiq E
-    AUTO_PROPERTY(int , D8) // temps arret etiq CE
-    AUTO_PROPERTY(int , D9) // temps retard etiq ECE
-    AUTO_PROPERTY(int , D10) // temps arret etiq ECE
-    AUTO_PROPERTY(int , D11) // temps lissage
+    AUTO_PROPERTY_SETTINGS(int , D8) // temps arret etiq CE
+    AUTO_PROPERTY_SETTINGS(int , D9) // temps retard etiq ECE
+    AUTO_PROPERTY_SETTINGS(int , D10) // temps arret etiq ECE
+    AUTO_PROPERTY_SETTINGS(int , D11) // temps lissage
 
     // les compteurs :
     AUTO_PROPERTY(int , C1) // Compteur temporaire

@@ -80,7 +80,7 @@ Item {
         width: 135
         height: 61
         from: 10
-        value: 10
+        value: grafcet.D3
         to: 1000
         stepSize: 5
         onValueChanged:
@@ -94,7 +94,7 @@ Item {
         width: 135
         height: 61
         from: 10
-        value: 10
+        value: grafcet.D2
         to: 5000
         stepSize: 5
         onValueChanged:
@@ -109,7 +109,7 @@ Item {
         width: 135
         height: 61
         from: 10
-        value: 10
+        value: grafcet.D6
         to: 5000
         stepSize: 5
         onValueChanged:
@@ -124,7 +124,7 @@ Item {
         height: 61
         editable: false
         from: 10
-        value: 10
+        value: grafcet.D1
         stepSize: 5
         to: 5000
         onValueChanged:
@@ -138,7 +138,7 @@ Item {
         width: 135
         height: 61
         from: 10
-        value: 10
+        value: grafcet.D11
         to: 5000
         stepSize: 5
         onValueChanged:
@@ -206,21 +206,6 @@ Item {
         font.bold: true
         font.pixelSize: 17
     }
-
-
-
-
-
-    Settings {
-
-        property alias retard_detect: retard_detect.value
-        property alias lissage: lissage.value
-        property alias retard_reperage: retard_reperage.value
-        property alias secu_reperage: secu_reperage.value
-        property alias secu_etiq: secu_etiq.value
-    }
-
-
 
 }
 

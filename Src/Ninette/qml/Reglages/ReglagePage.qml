@@ -69,15 +69,7 @@ Item {
 
 
 
-    Settings {
 
-       property alias retard_etiq2: retard_etiq2.value
-       property alias arret_etiq_CE: arret_etiq_CE.value
-
-       property alias retard_etiq_ECE: retard_etiq_ECE.value
-       property alias arret_etiq_ECE: arret_etiq_ECE.value
-
-    }
     SwipeView {
         id: svSettingsContainer
 
@@ -106,14 +98,9 @@ Item {
             x: 333
             y: 132
             width: 135
-            height: 61
-<<<<<<< HEAD
+            height: 61      
             from: 0
-            value: 0
-=======
-            from: 20
             value: grafcet.D4
->>>>>>> e0882a1529ed0a48ea306b4fe23ea30999bef127
             to: 5000
             stepSize: 5
             onValueChanged:
@@ -184,7 +171,7 @@ Item {
                 width: 135
                 height: 61
                 from: 10
-                value: 10
+                value: grafcet.D5
                 to: 5000
                 stepSize: 5
                 onValueChanged:
@@ -199,7 +186,7 @@ Item {
             width: 135
             height: 61
             from: 10
-            value: 10
+            value: grafcet.D8
             to: 5000
             stepSize: 5
             onValueChanged:
@@ -254,7 +241,7 @@ Item {
                 width: 135
                 height: 61
                 from: 10
-                value: 10
+                value: grafcet.D9
                 to: 5000
                 stepSize: 5
                 onValueChanged:
@@ -268,7 +255,7 @@ Item {
                 width: 135
                 height: 61
                 from: 10
-                value: 10
+                value: grafcet.D10
                 to: 5000
                 stepSize: 5
                 onValueChanged:

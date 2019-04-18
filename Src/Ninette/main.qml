@@ -74,18 +74,6 @@ QQC2.ApplicationWindow {
 
 
 // run page
-
-    ReglagePage{
-        visible: false
-        enabled: true
-
-        width: 0
-        height: 0
-        x:0
-        y:0
-
-
-    }
     ValidationPage{
         visible: false
         enabled: true
@@ -96,16 +84,6 @@ QQC2.ApplicationWindow {
         y:0
     }
 
-    ServicesPage{
-        visible: false
-        enabled: true
-
-        width: 0
-        height: 0
-        x:10
-        y:0
-
-    }
 
 
 
