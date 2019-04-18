@@ -67,20 +67,17 @@ Item {
     width: 800
     height: 480
 
+
+
     Settings {
 
-        property alias retard_etiq1: retard_etiq1.value
-        property alias arret_etiqE: arret_etiqE.value
+       property alias retard_etiq2: retard_etiq2.value
+       property alias arret_etiq_CE: arret_etiq_CE.value
 
-        property alias retard_etiq2: retard_etiq2.value
-        property alias arret_etiq_CE: arret_etiq_CE.value
-
-        property alias retard_etiq_ECE: retard_etiq_ECE.value
-        property alias arret_etiq_ECE: arret_etiq_ECE.value
+       property alias retard_etiq_ECE: retard_etiq_ECE.value
+       property alias arret_etiq_ECE: arret_etiq_ECE.value
 
     }
-
-
     SwipeView {
         id: svSettingsContainer
 
@@ -110,8 +107,13 @@ Item {
             y: 132
             width: 135
             height: 61
+<<<<<<< HEAD
             from: 0
             value: 0
+=======
+            from: 20
+            value: grafcet.D4
+>>>>>>> e0882a1529ed0a48ea306b4fe23ea30999bef127
             to: 5000
             stepSize: 5
             onValueChanged:
@@ -125,7 +127,7 @@ Item {
             width: 135
             height: 61
             from: 10
-            value: 10
+            value:  grafcet.D7
             to: 5000
             stepSize: 5
             onValueChanged:
@@ -292,18 +294,7 @@ Item {
         }
     }
 
-    Settings {
 
-        property alias retard_etiq1: retard_etiq1.value
-        property alias arret_etiqE: arret_etiqE.value
-
-        property alias retard_etiq2: retard_etiq2.value
-        property alias arret_etiq_CE: arret_etiq_CE.value
-
-        property alias retard_etiq_ECE: retard_etiq_ECE.value
-        property alias arret_etiq_ECE: arret_etiq_ECE.value
-
-    }
 
         PageIndicator {
             y: 338
