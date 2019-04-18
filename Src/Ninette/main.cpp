@@ -83,14 +83,8 @@ QQmlApplicationEngine engine;
     MyGPIO myGPIO;
     engine.rootContext()->setContextProperty("myGPIO", &myGPIO);
 
-    QSettings *_mySettings = new QSettings ("myapp.ini", QSettings ::IniFormat );
-
-
 
     FonctionGrafcet grafcet;
-    grafcet.C1( _mySettings->value("C1").toInt());
-    grafcet.C2( _mySettings->value("C2").toInt());
-
     engine.rootContext()->setContextProperty("grafcet", &grafcet);
 
 
@@ -106,12 +100,6 @@ QQmlApplicationEngine engine;
 
     int returnval = app.exec();
 
-        _mySettings->setValue("C1" , grafcet.C1()  );
-        _mySettings->setValue("C2" , grafcet.C2()  );
 
-        delete _mySettings;
-
-        qDebug() <<"Merci";
-
-        return returnval;
+    return returnval;
 }

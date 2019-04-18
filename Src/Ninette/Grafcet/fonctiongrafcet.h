@@ -60,8 +60,8 @@ public:
     AUTO_PROPERTY_SETTINGS(int , D11) // temps lissage
 
     // les compteurs :
-    AUTO_PROPERTY(int , C1) // Compteur temporaire
-    AUTO_PROPERTY(int , C2) // Compteur général
+    AUTO_PROPERTY_SETTINGS(int , C1) // Compteur temporaire
+    AUTO_PROPERTY_SETTINGS(int , C2) // Compteur général
 
     // les defauts
 

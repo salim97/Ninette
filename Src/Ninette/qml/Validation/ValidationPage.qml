@@ -39,8 +39,9 @@ Item {
                 text: qsTr("Etiq")
                 hoverEnabled: true
                 enabled: true
-                property bool checkeEtiq: switchEtiq.checked
-                checked: checkeEtiq == true ? grafcet.HEtiq =1 : grafcet.HEtiq=0
+                //property bool checkeEtiq: switchEtiq.checked
+                //checked: checkeEtiq == true ? grafcet.HEtiq =1 : grafcet.HEtiq=0
+                checked: grafcet.HEtiq
             }
 
 
@@ -51,8 +52,9 @@ Item {
                 text: qsTr("ContreEtiq")
                 hoverEnabled: true
                 enabled: true
-                property bool checkeContreEtiq: switchContreEtiq.checked
-                checked: checkeContreEtiq == true ? grafcet.HContreEtiq =1 : grafcet.HContreEtiq=0
+                //property bool checkeContreEtiq: switchContreEtiq.checked
+                //checked: checkeContreEtiq == true ? grafcet.HContreEtiq =1 : grafcet.HContreEtiq=0
+                checked: grafcet.HContreEtiq
             }
 
 
@@ -63,9 +65,9 @@ Item {
                 text: qsTr("EtiqContreEtiq")
                 hoverEnabled: true
                 enabled: true
-                property bool checkeEtiqContreEtiq: switchEtiqContreEtiq.checked
-
-                checked: checkeEtiqContreEtiq == true ? grafcet.HEtiqContreEtiq =1 : grafcet.HEtiqContreEtiq=0
+                //property bool checkeEtiqContreEtiq: switchEtiqContreEtiq.checked
+                //checked: checkeEtiqContreEtiq == true ? grafcet.HEtiqContreEtiq =1 : grafcet.HEtiqContreEtiq=0
+                checked:  grafcet.HEtiqContreEtiq
             }
 
             Text {
@@ -135,8 +137,9 @@ Item {
                 visible: true
                 hoverEnabled: true
                 enabled: true
-                property bool checkeRepEtiq: switchRepEtiq.checked
-                checked: checkeRepEtiq == true ? grafcet.HRepEtiq =1 : grafcet.HRepEtiq=0
+                //property bool checkeRepEtiq: switchRepEtiq.checked
+                //checked: checkeRepEtiq == true ? grafcet.HRepEtiq =1 : grafcet.HRepEtiq=0
+                checked:  grafcet.HRepEtiq ;
             }
 
 
@@ -148,9 +151,9 @@ Item {
                 text: qsTr("RepCran")
                 hoverEnabled: true
                 enabled: true
-                property bool checkeRepCran: switchRepCran.checked
-
-                checked: checkeRepCran == true ? grafcet.HRepCran =1 : grafcet.HRepCran=0
+                //property bool checkeRepCran: switchRepCran.checked
+                //checked: checkeRepCran == true ? grafcet.HRepCran =1 : grafcet.HRepCran=0
+                checked: grafcet.HRepCran ;
             }
 
 
@@ -194,18 +197,7 @@ Item {
 
         }
 
-        Settings {
 
-
-           // property alias checkeMarche: switchMarche.checked
-            property alias checkeRepEtiq: switchRepEtiq.checked
-            property alias checkeRepCran: switchRepCran.checked
-            property alias checkeEtiq: switchEtiq.checked
-            property alias checkeContreEtiq: switchContreEtiq.checked
-            property alias checkeEtiqContreEtiq: switchEtiqContreEtiq.checked
-
-
-        }
    }
 
     PageIndicator {

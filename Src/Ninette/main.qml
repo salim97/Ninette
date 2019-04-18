@@ -73,21 +73,6 @@ QQC2.ApplicationWindow {
     height: 480
 
 
-// run page
-    ValidationPage{
-        visible: false
-        enabled: true
-
-        width: 0
-        height: 0
-        x:5
-        y:0
-    }
-
-
-
-
-
 
     title: qsTr("Wearable")
 
