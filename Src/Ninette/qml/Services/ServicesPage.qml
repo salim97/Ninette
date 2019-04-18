@@ -82,7 +82,7 @@ Item {
         from: 10
         value: grafcet.D3
         to: 1000
-        stepSize: 5
+        stepSize: 50
         onValueChanged:
             grafcet.D3 = secu_reperage.value
     }
@@ -111,7 +111,7 @@ Item {
         from: 10
         value: grafcet.D6
         to: 5000
-        stepSize: 5
+        stepSize: 50
         onValueChanged:
             grafcet.D6 = secu_etiq.value
 
