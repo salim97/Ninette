@@ -12,7 +12,7 @@
 FonctionGrafcet::FonctionGrafcet(QObject *parent) : QObject(parent)
 {
 
-
+CALL_THIS_IN_CONSTRACTEUR_FOR_AUTO_PROPERTY_SETTINGS
 }
 
 

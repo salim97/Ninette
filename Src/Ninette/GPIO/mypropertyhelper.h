@@ -26,6 +26,41 @@
        void NAME(TYPE value) {m_ ## NAME = value; } \
        TYPE m_ ## NAME;
 
+#define AUTO_PROPERTY_SETTINGS(TYPE, NAME) \
+    Q_PROPERTY(TYPE NAME READ NAME WRITE NAME NOTIFY NAME ## Changed ) \
+    public: \
+        Q_INVOKABLE void init ## NAME() \
+        {\
+            QString func_name = Q_FUNC_INFO;\
+            func_name = func_name.split("(")[0];\
+            func_name = func_name.split("::")[1];\
+            func_name.remove(0, 4 );\
+            QSettings settings("myapp.ini", QSettings ::IniFormat );\
+            m_ ## NAME = qvariant_cast<TYPE>(settings.value(func_name));     \
+        }\
+       TYPE NAME() const { return m_ ## NAME ; } \
+       void NAME(TYPE value) { \
+          if (m_ ## NAME == value)  return; \
+          QString func_name = Q_FUNC_INFO;\
+          func_name = func_name.split("(")[0];\
+          func_name = func_name.split("::")[1];\
+          QSettings settings("myapp.ini", QSettings ::IniFormat );\
+          settings.setValue(func_name , value  );\
+          m_ ## NAME = value; \
+          emit NAME ## Changed(value); \
+        } \
+       Q_SIGNAL void NAME ## Changed(TYPE value);\
+    private: \
+       TYPE m_ ## NAME;
+#define CALL_THIS_IN_CONSTRACTEUR_FOR_AUTO_PROPERTY_SETTINGS \
+for(int i = this->metaObject()->methodOffset(); \
+    i < this->metaObject()->methodCount(); i++) \
+{ \
+    if(this->metaObject()->method(i).name().contains("init")) \
+        this->metaObject()->invokeMethod(this, \
+                                         this->metaObject()->method(i).name(),\
+                                         Qt::DirectConnection);\
+}\
 
 
 #define OUTPUT_GPIO_PROPERTY(NAME, wPInumberPIN) \
