@@ -71,12 +71,12 @@ public:
 
     // les activations    H: HMI
 
-    AUTO_PROPERTY(bool , HMarche)   // marche machine
-    AUTO_PROPERTY(bool , HRepEtiq) // validation Reperage etiquette
-    AUTO_PROPERTY(bool , HRepCran) // validation Reperage Cran
-    AUTO_PROPERTY(bool , HEtiq)    // validation etiquette
-    AUTO_PROPERTY(bool , HContreEtiq)   // validation contre etiquette
-    AUTO_PROPERTY(bool , HEtiqContreEtiq)   // validation etiquette contre etiquette
+    AUTO_PROPERTY_SETTINGS(bool , HMarche)   // marche machine
+    AUTO_PROPERTY_SETTINGS(bool , HRepEtiq) // validation Reperage etiquette
+    AUTO_PROPERTY_SETTINGS(bool , HRepCran) // validation Reperage Cran
+    AUTO_PROPERTY_SETTINGS(bool , HEtiq)    // validation etiquette
+    AUTO_PROPERTY_SETTINGS(bool , HContreEtiq)   // validation contre etiquette
+    AUTO_PROPERTY_SETTINGS(bool , HEtiqContreEtiq)   // validation etiquette contre etiquette
 
     // button top momentané
 
