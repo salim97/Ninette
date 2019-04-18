@@ -11,9 +11,9 @@
 
 FonctionGrafcet::FonctionGrafcet(QObject *parent) : QObject(parent)
 {
-    qDebug()<<"breakpoint 00: C1(getSettings(C1).toInt())";
 
-        C1(getSettings("C1").toInt());}
+
+}
 
 
 void FonctionGrafcet::CalculeTransition()
@@ -309,6 +309,7 @@ void FonctionGrafcet::affecteSortie()
         Te[5]=0;
 
         C1(C1()+1);
+        C2(C2()+1);
 
         B[9]=0;
 

@@ -77,15 +77,18 @@ QQC2.ApplicationWindow {
 
     ReglagePage{
         visible: false
+        enabled: true
 
         width: 0
         height: 0
         x:0
         y:0
 
+
     }
     ValidationPage{
         visible: false
+        enabled: true
 
         width: 0
         height: 0
@@ -95,6 +98,7 @@ QQC2.ApplicationWindow {
 
     ServicesPage{
         visible: false
+        enabled: true
 
         width: 0
         height: 0
@@ -209,7 +213,11 @@ background: Rectangle {
            height: 111
            visible: true
            source: "../../images/aru.png"
+
+
        }
+
+
 
 
        Image {
@@ -231,6 +239,9 @@ background: Rectangle {
            visible: false
            source: "images/warning_ech.png"
                   }
+
+
+
 
 
    }

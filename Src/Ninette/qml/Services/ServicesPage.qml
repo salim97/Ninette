@@ -79,8 +79,8 @@ Item {
         y: 224
         width: 135
         height: 61
-        from: 1
-        value: 1
+        from: 10
+        value: 10
         to: 1000
         stepSize: 5
         onValueChanged:
@@ -93,10 +93,10 @@ Item {
         y: 137
         width: 135
         height: 61
-        from: 1
-        value: 1
+        from: 10
+        value: 10
         to: 5000
-        stepSize: 10
+        stepSize: 5
         onValueChanged:
             grafcet.D2 = retard_reperage.value
 
@@ -108,8 +108,8 @@ Item {
         y: 137
         width: 135
         height: 61
-        from: 1
-        value: 1
+        from: 10
+        value: 10
         to: 5000
         stepSize: 5
         onValueChanged:
@@ -123,9 +123,9 @@ Item {
         width: 135
         height: 61
         editable: false
-        from: 1
-        value: 1
-        stepSize: 10
+        from: 10
+        value: 10
+        stepSize: 5
         to: 5000
         onValueChanged:
             grafcet.D1 = retard_detect.value
@@ -137,10 +137,10 @@ Item {
         y: 50
         width: 135
         height: 61
-        from: 1
-        value: 1
+        from: 10
+        value: 10
         to: 5000
-        stepSize: 10
+        stepSize: 5
         onValueChanged:
             grafcet.D11 = lissage.value
     }
@@ -192,34 +192,21 @@ Item {
 
 
     Label {
-        id: co1
-        x: 317
-        y: 309
-        text: grafcet.C1
+        id: co2
+        x: 346
+        y: 300
+        text: grafcet.C2
+        horizontalAlignment: Text.AlignHCenter
         font.pointSize: 20
     }
-
-    Rectangle {
-        id: c1
-        x: 189
-        y: 295
-        width: 65
-        height: 62
-        radius:  50
-        color: "red"
-        border.color: "black"
-        border.width: 5
-        MouseArea{
-            anchors.rightMargin: 0
-            anchors.bottomMargin: 0
-            anchors.leftMargin: 0
-            anchors.topMargin: 0
-            anchors.fill: parent
-            onClicked: grafcet.C1=0
-
-        }
-
+    Text {
+        x: 291
+        y: 306
+        text: qsTr("CMP:")
+        font.bold: true
+        font.pixelSize: 17
     }
+
 
 
 

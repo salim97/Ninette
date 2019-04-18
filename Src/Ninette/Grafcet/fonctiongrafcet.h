@@ -20,11 +20,7 @@ public:
 
     explicit FonctionGrafcet(QObject *parent = nullptr);
 
-    void destracteur(){
-            qDebug()<<"breakpoint 01 : setsettings(C1,C1());";
 
-            setSettings("C1",C1());
-        }
 
 
     char Etapes[15];

@@ -3,8 +3,8 @@
 MyParentObject::MyParentObject()
 {
     thisPath = QDir::toNativeSeparators(QApplication::applicationDirPath());
-    settingsFilePath = thisPath +"\settings.ini" ;
-    _mySettings = new QSettings();
+        settingsFilePath = thisPath +"/settings.ini" ;
+        _mySettings = new QSettings(settingsFilePath, QSettings::IniFormat);
 
 }
 

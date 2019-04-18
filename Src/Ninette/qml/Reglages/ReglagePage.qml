@@ -67,6 +67,19 @@ Item {
     width: 800
     height: 480
 
+    Settings {
+
+        property alias retard_etiq1: retard_etiq1.value
+        property alias arret_etiqE: arret_etiqE.value
+
+        property alias retard_etiq2: retard_etiq2.value
+        property alias arret_etiq_CE: arret_etiq_CE.value
+
+        property alias retard_etiq_ECE: retard_etiq_ECE.value
+        property alias arret_etiq_ECE: arret_etiq_ECE.value
+
+    }
+
 
     SwipeView {
         id: svSettingsContainer
@@ -97,10 +110,10 @@ Item {
             y: 132
             width: 135
             height: 61
-            from: 2
-            value: 2
+            from: 20
+            value: 20
             to: 5000
-            stepSize: 1
+            stepSize: 5
             onValueChanged:
                 grafcet.D4 = retard_etiq1.value
         }
@@ -111,10 +124,10 @@ Item {
             y: 231
             width: 135
             height: 61
-            from: 2
-            value: 2
+            from: 10
+            value: 10
             to: 5000
-            stepSize: 1
+            stepSize: 5
             onValueChanged:
                 grafcet.D7 = arret_etiqE.value
         }
@@ -168,12 +181,13 @@ Item {
                 y: 132
                 width: 135
                 height: 61
-                from: 2
-                value: 2
+                from: 10
+                value: 10
                 to: 5000
-                stepSize: 10
+                stepSize: 5
                 onValueChanged:
                     grafcet.D5 = retard_etiq2.value
+
             }
 
         SpinBox {
@@ -182,10 +196,10 @@ Item {
             y: 231
             width: 135
             height: 61
-            from: 2
-            value: 2
+            from: 10
+            value: 10
             to: 5000
-            stepSize: 10
+            stepSize: 5
             onValueChanged:
                 grafcet.D8 = arret_etiq_CE.value
         }
@@ -237,10 +251,10 @@ Item {
                 y: 132
                 width: 135
                 height: 61
-                from: 2
-                value: 2
+                from: 10
+                value: 10
                 to: 5000
-                stepSize: 10
+                stepSize: 5
                 onValueChanged:
                     grafcet.D9 = retard_etiq_ECE.value
             }
@@ -251,10 +265,10 @@ Item {
                 y: 231
                 width: 135
                 height: 61
-                from: 2
-                value: 2
+                from: 10
+                value: 10
                 to: 5000
-                stepSize: 10
+                stepSize: 5
                 onValueChanged:
                     grafcet.D10 = arret_etiq_ECE.value
             }
@@ -307,59 +321,5 @@ Item {
 
 
 
-//    QQC2.SwipeView {
-//        id: svAlarmsContainer
 
-//        anchors.fill: parent
-
-//        Repeater {
-//            model: ListModel {
-//                ListElement { name: qsTr("Week Days"); state: true; time: "06:00 AM" }
-//                ListElement { name: qsTr("Week Ends"); state: false; time: "07:30 AM" }
-//            }
-
-//            Item {
-//                Column {
-//                    spacing: 30
-//                    anchors.centerIn: parent
-
-//                    QQC2.Switch {
-//                        id: stateSwitch
-//                        checked: model.state
-//                        anchors.left: nameLabel.right
-//                    }
-
-//                    Text {
-//                        text: model.time
-//                        anchors.horizontalCenter: parent.horizontalCenter
-//                        verticalAlignment: Text.AlignVCenter
-//                        height: UIStyle.fontSizeXL
-//                        font.bold: stateSwitch.checked
-//                        font.pixelSize: stateSwitch.checked ? UIStyle.fontSizeXL : UIStyle.fontSizeL
-//                        font.letterSpacing: 4
-//                        color: UIStyle.colorQtGray1
-//                    }
-
-//                    Text {
-//                        id: nameLabel
-//                        text: model.name
-//                        anchors.horizontalCenter: parent.horizontalCenter
-//                        font.pixelSize: UIStyle.fontSizeS
-//                        font.italic: true
-//                        font.bold: true
-//                        font.letterSpacing: 1
-//                        color: UIStyle.colorQtGray2
-//                    }
-//                }
-//            }
-//        }
-//    }
-
-//    QQC2.PageIndicator {
-//        count: svAlarmsContainer.count
-//        currentIndex: svAlarmsContainer.currentIndex
-
-//        anchors.bottom: svAlarmsContainer.bottom
-//        anchors.horizontalCenter: parent.horizontalCenter
-//    }
 
