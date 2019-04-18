@@ -42,6 +42,7 @@ Item {
                 //property bool checkeEtiq: switchEtiq.checked
                 //checked: checkeEtiq == true ? grafcet.HEtiq =1 : grafcet.HEtiq=0
                 checked: grafcet.HEtiq
+                onCheckedChanged: grafcet.HEtiq = checked
             }
 
 
@@ -55,6 +56,7 @@ Item {
                 //property bool checkeContreEtiq: switchContreEtiq.checked
                 //checked: checkeContreEtiq == true ? grafcet.HContreEtiq =1 : grafcet.HContreEtiq=0
                 checked: grafcet.HContreEtiq
+                onCheckedChanged: grafcet.HContreEtiq = checked
             }
 
 
@@ -68,6 +70,7 @@ Item {
                 //property bool checkeEtiqContreEtiq: switchEtiqContreEtiq.checked
                 //checked: checkeEtiqContreEtiq == true ? grafcet.HEtiqContreEtiq =1 : grafcet.HEtiqContreEtiq=0
                 checked:  grafcet.HEtiqContreEtiq
+                onCheckedChanged: grafcet.HEtiqContreEtiq = checked
             }
 
             Text {
@@ -139,7 +142,8 @@ Item {
                 enabled: true
                 //property bool checkeRepEtiq: switchRepEtiq.checked
                 //checked: checkeRepEtiq == true ? grafcet.HRepEtiq =1 : grafcet.HRepEtiq=0
-                checked:  grafcet.HRepEtiq ;
+                checked:  grafcet.HRepEtiq
+                onCheckedChanged: grafcet.HRepEtiq = checked
             }
 
 
@@ -154,6 +158,7 @@ Item {
                 //property bool checkeRepCran: switchRepCran.checked
                 //checked: checkeRepCran == true ? grafcet.HRepCran =1 : grafcet.HRepCran=0
                 checked: grafcet.HRepCran ;
+                onCheckedChanged: grafcet.HRepCran = checked
             }
 
 
