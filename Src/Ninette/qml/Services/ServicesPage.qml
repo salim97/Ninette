@@ -81,7 +81,7 @@ Item {
         height: 61
         from: 10
         value: grafcet.D3
-        to: 1000
+        to: 5000
         stepSize: 50
         onValueChanged:
             grafcet.D3 = secu_reperage.value
