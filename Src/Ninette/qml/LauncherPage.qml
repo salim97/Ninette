@@ -62,24 +62,7 @@ PathView {
         y: 384
         width: 237
         height: 42
-        border.width: 2
-        gradient: Gradient {
-            GradientStop {
-                position: 0.313
-                color: "#f8ecec"
-            }
 
-            GradientStop {
-                position: 0.534
-                color: "#f8ecec"
-            }
-
-            GradientStop {
-                position: 0.973
-                color: "#000000"
-            }
-
-        }
         Label {
         id: co1
         x: 56
@@ -306,9 +289,9 @@ PathView {
 
         property string title: model.title
 
-        icon.width: 36
-        icon.height: 36
-        icon.name: model.icon
+//        icon.width: 36
+//        icon.height: 36
+//        icon.name: model.icon
         opacity: PathView.itemOpacity
         padding: 12
 
