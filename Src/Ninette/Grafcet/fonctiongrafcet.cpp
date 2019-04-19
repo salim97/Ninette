@@ -430,7 +430,7 @@ void FonctionGrafcet::temporisateur()
 
 void FonctionGrafcet::aru()
 {
-    if (myGPIO->aru()==false && HMarche()== true ){
+    if (myGPIO->aru()==false  ){
         myGPIO->detProduit()==false;
         myGPIO->repEtiq()==false;
         myGPIO->repCran()==false;

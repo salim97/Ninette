@@ -262,7 +262,7 @@ PathView {
             page: "Help/HelpPage.qml"
         }
         ListElement {
-            title: qsTr("Manu/Cmp")
+            title: qsTr("Manuel")
             icon: "Compteur"
             page: "Compteurs/CompteurPage.qml"
         }
@@ -289,9 +289,9 @@ PathView {
 
         property string title: model.title
 
-//        icon.width: 36
-//        icon.height: 36
-//        icon.name: model.icon
+        icon.width: 36
+        icon.height: 36
+        icon.name: model.icon
         opacity: PathView.itemOpacity
         padding: 12
 

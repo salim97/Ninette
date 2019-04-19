@@ -96,7 +96,7 @@ Item {
         from: 10
         value: grafcet.D2
         to: 5000
-        stepSize: 5
+        stepSize: 10
         onValueChanged:
             grafcet.D2 = retard_reperage.value
 
@@ -126,7 +126,7 @@ Item {
         editable: false
         from: 10
         value: grafcet.D1
-        stepSize: 5
+        stepSize: 10
         to: 5000
         onValueChanged:
             grafcet.D1 = retard_detect.value
@@ -141,7 +141,7 @@ Item {
         from: 10
         value: grafcet.D11
         to: 5000
-        stepSize: 5
+        stepSize: 10
         onValueChanged:
             grafcet.D11 = lissage.value
     }
