@@ -46,22 +46,40 @@ PathView {
 
       Component.onCompleted: {
           console.log("0clickedclicked")
-        aruchanged();
+          aruchanged();
 
+      }
+
+      onAruChanged:{
+          console.log("00000000000000")
+          aruchanged();
+      }
     }
 
-        onAruChanged:{
-            console.log("00000000000000")
-            aruchanged();
-        }
-    }
-
-//  compteur
+    //  compteur
     Rectangle{
         x: 281
         y: 384
         width: 237
         height: 42
+        border.width: 2
+        gradient: Gradient {
+            GradientStop {
+                position: 0.313
+                color: "#f8ecec"
+            }
+
+            GradientStop {
+                position: 0.534
+                color: "#f8ecec"
+            }
+
+            GradientStop {
+                position: 0.973
+                color: "#000000"
+            }
+
+        }
         Label {
         id: co1
         x: 56
@@ -256,7 +274,7 @@ PathView {
             page: "Language/LanguagePage.qml"
         }
         ListElement {
-            title: qsTr("Helps")
+            title: qsTr("Help")
             icon: "info"
             page: "Help/HelpPage.qml"
         }
@@ -266,7 +284,7 @@ PathView {
             page: "Compteurs/CompteurPage.qml"
         }
         ListElement {
-            title: qsTr("Contacts")
+            title: qsTr("Contact")
             icon: "notifications"
             page: "Contacts/ContactPage.qml"
         }
@@ -288,9 +306,9 @@ PathView {
 
         property string title: model.title
 
-        icon.width: 36
-        icon.height: 36
-        icon.name: model.icon
+//        icon.width: 36
+//        icon.height: 36
+//        icon.name: model.icon
         opacity: PathView.itemOpacity
         padding: 12
 
