@@ -254,7 +254,6 @@ background: Rectangle {
     }
 
 
-
 }
 
 

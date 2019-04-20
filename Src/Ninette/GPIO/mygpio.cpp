@@ -6,72 +6,29 @@
 #include "mypropertyhelper.h"
 #include <QProcess>
 
-using namespace std;
 
+//--------------------------------------------------------------------------------
+// touche pas a ca ...
+MyGPIO *myGPIO = nullptr;
 
-namespace{    // use for input connection
-
-MyGPIO *myGPIO;
-
-    void gpioTrigger_INT1(void)
-    {
-        //qDebug() << "void gpioTrigger_INT1(void)";
-        QMetaObject::invokeMethod(myGPIO, "readAllGPIO", Qt::QueuedConnection);
-    }
+void MyGPIO::isrCatcher()
+{
+    QMetaObject::invokeMethod(myGPIO, "readAllGPIO", Qt::QueuedConnection);
 
 }
+//--------------------------------------------------------------------------------
+
 
 MyGPIO::MyGPIO(QObject *parent) : QObject(parent)
 {
 
-
     wiringPiSetup();
     myGPIO = this ;// use for input connection
-    pinMode(pin_detProduit, INPUT);// use for input connection
-    wiringPiISR(pin_detProduit, INT_EDGE_BOTH, &gpioTrigger_INT1); // use for input connection
-    pullUpDnControl(pin_detProduit, PUD_DOWN);
 
-
-    pinMode(pin_repEtiq, INPUT);// use for input connection
-    wiringPiISR(pin_repEtiq, INT_EDGE_BOTH, &gpioTrigger_INT1); // use for input connection
-    pullUpDnControl(pin_repEtiq, PUD_DOWN);
-
-
-    pinMode(pin_repCran, INPUT);// use for input connection
-    wiringPiISR(pin_repCran, INT_EDGE_BOTH, &gpioTrigger_INT1); // use for input connection
-    pullUpDnControl(pin_repCran, PUD_DOWN);
-
-
-    pinMode(pin_echenillageP1, INPUT);// use for input connection
-    wiringPiISR(pin_echenillageP1, INT_EDGE_BOTH , &gpioTrigger_INT1); // use for input connection
-    pullUpDnControl(pin_echenillageP1, PUD_DOWN);
-
-
-
-    pinMode(pin_echenillageP2, INPUT);// use for input connection
-    wiringPiISR(pin_echenillageP2, INT_EDGE_BOTH, &gpioTrigger_INT1); // use for input connection
-    pullUpDnControl(pin_echenillageP2, PUD_DOWN);
-
-    pinMode(pin_aru, INPUT);// use for input connection
-    wiringPiISR(pin_aru, INT_EDGE_BOTH, &gpioTrigger_INT1); // use for input connection
-    pullUpDnControl(pin_aru, PUD_DOWN);
-
-
-
-
-    pinMode(pin_marche, OUTPUT);
-    pinMode(pin_moteur1, OUTPUT);
-    pinMode(pin_moteur2, OUTPUT);
-    pinMode(pin_lisseur, OUTPUT);
+    CALL_THIS_IN_CONSTRACTEUR_FOR_INPUT_OUTPUT_GPIO
 
     readAllGPIO();
-
-
-
-
-
 }
-
 
 void MyGPIO::readAllGPIO() // use for input connection  // when the state change 0 to 1 or 1 to 0 for all gpio input , this function start
 {
