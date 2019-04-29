@@ -18,6 +18,14 @@ it's mix of HTML and CSS, you can use javascript to add some functionalltiy
 what is special about this frontend language ( vs html + css ) is that the compoment that you use are C++ classes
 so it's 100% perfomance, you can build a game with 60 fps with it
 
+# Run / Testing
+if you want app to be displayed in vnc window, you need to execute this :
+
+```
+;/Ninette --platform xcb
+```
+
+
 # author
 Sebabiban Khaled
 
