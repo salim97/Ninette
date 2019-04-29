@@ -22,7 +22,7 @@ so it's 100% perfomance, you can build a game with 60 fps with it
 if you want app to be displayed in vnc window, you need to execute this :
 
 ```
-;/Ninette --platform xcb
+./Ninette --platform xcb
 ```
 
 
