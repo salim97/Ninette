@@ -6,17 +6,12 @@
 #include <QProcess>
 
 
-
 class MyGPIO : public QObject
 {
     Q_OBJECT
 
 public:
     explicit MyGPIO(QObject *parent = 0);
-
-
-    static void isrCatcher();
-
 
      bool rising_detProduit;
      bool bit_rising_detProduit;
@@ -38,12 +33,12 @@ public:
 
      //AUTO_PROPERTY(bool , HMarche)   // marche machine
 
-    INPUT_GPIO_PROPERTY(detProduit,     2,  INT_EDGE_BOTH, PUD_DOWN)
-    INPUT_GPIO_PROPERTY(repEtiq ,       3,  INT_EDGE_BOTH, PUD_DOWN)
-    INPUT_GPIO_PROPERTY(repCran,        4,  INT_EDGE_BOTH, PUD_DOWN)
-    INPUT_GPIO_PROPERTY(echenillageP1,  5,  INT_EDGE_BOTH, PUD_DOWN)
-    INPUT_GPIO_PROPERTY(echenillageP2,  10, INT_EDGE_BOTH, PUD_DOWN)
-    INPUT_GPIO_PROPERTY(aru,            31, INT_EDGE_BOTH, PUD_DOWN)
+    INPUT_GPIO_PROPERTY(detProduit, 2)
+    INPUT_GPIO_PROPERTY(repEtiq, 3)
+    INPUT_GPIO_PROPERTY(repCran, 4)
+    INPUT_GPIO_PROPERTY(echenillageP1, 5)
+    INPUT_GPIO_PROPERTY(echenillageP2, 10)
+    INPUT_GPIO_PROPERTY(aru, 31)
 
 
     OUTPUT_GPIO_PROPERTY(marche, 22)
@@ -67,6 +62,5 @@ public slots:  //for input gpio
 
 
 };
-
 
 #endif // MYGPIO_H

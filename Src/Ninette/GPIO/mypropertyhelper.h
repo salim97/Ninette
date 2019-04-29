@@ -3,7 +3,6 @@
 
 #pragma once
 #include <QObject>
-#include <QDebug>
 
 
 #define AUTO_PROPERTY(TYPE, NAME) \
@@ -30,7 +29,7 @@
 #define AUTO_PROPERTY_SETTINGS(TYPE, NAME) \
     Q_PROPERTY(TYPE NAME READ NAME WRITE NAME NOTIFY NAME ## Changed ) \
     public: \
-        Q_INVOKABLE void _init ## NAME() \
+        Q_INVOKABLE void init ## NAME() \
         {\
             QString func_name = Q_FUNC_INFO;\
             func_name = func_name.split("(")[0];\
@@ -57,7 +56,7 @@
 for(int i = this->metaObject()->methodOffset(); \
     i < this->metaObject()->methodCount(); i++) \
 { \
-    if(this->metaObject()->method(i).name().contains("_init")) \
+    if(this->metaObject()->method(i).name().contains("init")) \
         this->metaObject()->invokeMethod(this, \
                                          this->metaObject()->method(i).name(),\
                                          Qt::DirectConnection);\
@@ -67,10 +66,6 @@ for(int i = this->metaObject()->methodOffset(); \
 #define OUTPUT_GPIO_PROPERTY(NAME, wPInumberPIN) \
     Q_PROPERTY(bool NAME READ NAME WRITE NAME NOTIFY NAME ## Changed ) \
     public: \
-        Q_INVOKABLE void __init ## NAME() \
-        {\
-            pinMode( pin_ ## NAME , OUTPUT);\
-        }\
        bool NAME() const { return m_ ## NAME ; } \
        void NAME(bool value) { \
           if (m_ ## NAME == value)  return; \
@@ -86,15 +81,9 @@ for(int i = this->metaObject()->methodOffset(); \
 
 
 
-#define INPUT_GPIO_PROPERTY(NAME, wPInumberPIN, INT_MODE, PUD_MODE) \
+#define INPUT_GPIO_PROPERTY(NAME, wPInumberPIN) \
     Q_PROPERTY(bool NAME READ NAME WRITE NAME NOTIFY NAME ## Changed ) \
     public: \
-        Q_INVOKABLE void __init ## NAME() \
-        {\
-            pinMode( pin_ ## NAME , INPUT);\
-            wiringPiISR( pin_ ## NAME , INT_MODE , isrCatcher);\
-            pullUpDnControl( pin_ ## NAME , PUD_MODE );\
-        }\
        bool NAME() const { return m_ ## NAME ; } \
        void NAME(bool value) { \
           if (m_ ## NAME == value)  return; \
@@ -106,12 +95,3 @@ for(int i = this->metaObject()->methodOffset(); \
        int pin_ ## NAME = wPInumberPIN ; \
        bool m_ ## NAME;
 //#endif // MYPROPERTYHELPER_H
-#define CALL_THIS_IN_CONSTRACTEUR_FOR_INPUT_OUTPUT_GPIO \
-for(int i = this->metaObject()->methodOffset(); \
-    i < this->metaObject()->methodCount(); i++) \
-{ \
-    if(this->metaObject()->method(i).name().contains("__init")) \
-        this->metaObject()->invokeMethod(this, \
-                                         this->metaObject()->method(i).name(),\
-                                         Qt::DirectConnection);\
-}
