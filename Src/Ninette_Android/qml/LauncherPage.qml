@@ -104,20 +104,19 @@ PathView {
         width: 115
         height: 115
         visible: true
-        x: 30
-        y: 0
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.leftMargin: 10
         onClicked: {stopp.visible=false; power.visible = true; grafcet.HMarche=true }
 
         Image {
             id: stop
             visible: true
-            width: 100
-            height: 100
+           anchors.fill: parent
             source: "../images/Reload0.png"
         }
         Text {
-            x: 22
-            y: 41
+           anchors.centerIn: parent
 
             text: qsTr("START")
             font.bold: true
@@ -126,8 +125,9 @@ PathView {
 
     MouseArea{
         id: power
-        x: 30
-        y: 0
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.leftMargin: 10
         width: 115
         height: 115
         visible: false
@@ -138,13 +138,11 @@ PathView {
         AnimatedImage {
             id : run
             visible: true
-            width: 100
-            height: 100
+             anchors.fill: parent
             source: "../images/Reload.gif"
         }
         Text {
-            x: 26
-            y: 41
+            anchors.centerIn: parent
 
             text: qsTr("STOP")
             font.bold: true
@@ -158,23 +156,16 @@ PathView {
 
     Image {
         id: off
-        x: 720
-        y: 0
+       anchors.top: parent.top
+       anchors.right: parent.right
+       anchors.rightMargin: 20
         width: 80
         height: 80
         source: "../images/off_80.png"
 
         MouseArea{
-            anchors.rightMargin: 0
-            anchors.bottomMargin: 0
-            anchors.leftMargin: 0
-            anchors.topMargin: 0
             anchors.fill: parent
 
-            x: 710
-            y: 0
-            width: 90
-            height: 90
             enabled: true
             //onClicked: {myGPIO.shutdown()}
             onDoubleClicked: {myGPIO.shutdown()}

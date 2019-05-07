@@ -153,27 +153,24 @@ QQC2.ApplicationWindow {
 
     background: Rectangle {
         id: rectangle
-        x: 0
-        y: 1
-        width: 800
-        height: 480
+       anchors.fill: parent
         color: "#c0c0c0"
         visible: true
 
         Image {
             id: image
-            x: 0
-            y: 347
-            width: 250
-            height: 133
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            width: 200
+            height: 100
             source: "images/CDA LCD 400.png"
         }
         Image {
             id: aru
-            x: 535
-            y: 369
-            width: 265
-            height: 111
+            anchors.bottom: parent.bottom
+            anchors.right: parent.right
+            width: 200
+            height: 80
             visible: true
             source: "../../images/aru.png"
 
@@ -185,20 +182,20 @@ QQC2.ApplicationWindow {
 
         Image {
             id: warning_rep
-            x: 535
-            y: 369
-            width: 265
-            height: 111
+            anchors.bottom: parent.bottom
+            anchors.right: parent.right
+            width: 200
+            height: 80
             visible: false
             source: "images/warning_rep.png"
         }
 
         Image {
             id: warning_ech
-            x: 535
-            y: 369
-            width: 265
-            height: 111
+            anchors.bottom: parent.bottom
+            anchors.right: parent.right
+            width: 200
+            height: 80
             visible: false
             source: "images/warning_ech.png"
         }
