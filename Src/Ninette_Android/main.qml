@@ -76,7 +76,7 @@ QQC2.ApplicationWindow {
 
     title: qsTr("Wearable")
 
-// gestion d'arret d'urgence pour tous les pages
+    // gestion d'arret d'urgence pour tous les pages
 
     Connections{
         target: myGPIO
@@ -98,60 +98,60 @@ QQC2.ApplicationWindow {
         }
 
 
-      Component.onCompleted: {
-        aruchanged();
+        Component.onCompleted: {
+            aruchanged();
 
-    }
+        }
 
         onAruChanged:{
             aruchanged();
 
-}
+        }
 
 
     }
 
-// gestion defaut ( reperage + echénilliage ) pour tous les pages
+    // gestion defaut ( reperage + echénilliage ) pour tous les pages
 
-Connections{
-target: grafcet
+    Connections{
+        target: grafcet
 
-onDreperageChanged : {
+        onDreperageChanged : {
 
-    if(grafcet.dreperage==true){
+            if(grafcet.dreperage==true){
 
-        console.log("reperage time out")
-         warning_rep.visible= true
+                console.log("reperage time out")
+                warning_rep.visible= true
+            }
+
+            else{
+                warning_rep.visible= false
+            }
+
+
+        }
+
+        onDechenlliageChanged:{
+
+            if(grafcet.dechenlliage==true){
+
+                console.log("echenlliage time out")
+                warning_ech.visible= true
+            }
+
+            else{
+                warning_ech.visible= false
+            }
+        }
+
+
     }
 
-    else{
-       warning_rep.visible= false
-    }
+
+    // background with all defaults
 
 
-}
-
-onDechenlliageChanged:{
-
-    if(grafcet.dechenlliage==true){
-
-        console.log("echenlliage time out")
-         warning_ech.visible= true
-    }
-
-    else{
-       warning_ech.visible= false
-    }
-}
-
-
-}
-
-
-// background with all defaults
-
-
-background: Rectangle {
+    background: Rectangle {
         id: rectangle
         x: 0
         y: 1
@@ -161,67 +161,56 @@ background: Rectangle {
         visible: true
 
         Image {
-           id: image
-           x: 0
-           y: 347
-           width: 250
-           height: 133
-           source: "images/CDA LCD 400.png"
-       }
-       Image {
-           id: aru
-           x: 535
-           y: 369
-           width: 265
-           height: 111
-           visible: true
-           source: "../../images/aru.png"
+            id: image
+            x: 0
+            y: 347
+            width: 250
+            height: 133
+            source: "images/CDA LCD 400.png"
+        }
+        Image {
+            id: aru
+            x: 535
+            y: 369
+            width: 265
+            height: 111
+            visible: true
+            source: "../../images/aru.png"
 
 
-       }
-
-
-
-
-       Image {
-           id: warning_rep
-           x: 535
-           y: 369
-           width: 265
-           height: 111
-           visible: false
-           source: "images/warning_rep.png"
-                  }
-
-       Image {
-           id: warning_ech
-           x: 535
-           y: 369
-           width: 265
-           height: 111
-           visible: false
-           source: "images/warning_ech.png"
-                  }
+        }
 
 
 
 
+        Image {
+            id: warning_rep
+            x: 535
+            y: 369
+            width: 265
+            height: 111
+            visible: false
+            source: "images/warning_rep.png"
+        }
 
-   }
+        Image {
+            id: warning_ech
+            x: 535
+            y: 369
+            width: 265
+            height: 111
+            visible: false
+            source: "images/warning_ech.png"
+        }
 
 
 
 
 
-
-
-
-
-
-
+    }
 
     header: NaviButton {
-            id: homeButton
+        id: homeButton
 
         edge: Qt.TopEdge
         enabled: stackView.depth > 1

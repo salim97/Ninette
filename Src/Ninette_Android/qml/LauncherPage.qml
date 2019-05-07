@@ -17,7 +17,7 @@ PathView {
     readonly property int itemSize: size / 4
     readonly property int size: Math.min(width - 80, height)
     readonly property int radius: size / 2 - itemSize / 3
-    width: 800
+    //width: 800
 
 
 
@@ -44,53 +44,60 @@ PathView {
         }
 
 
-      Component.onCompleted: {
-          console.log("0clickedclicked")
-          aruchanged();
+        Component.onCompleted: {
+            console.log("0clickedclicked")
+            aruchanged();
 
-      }
+        }
 
-      onAruChanged:{
-          console.log("00000000000000")
-          aruchanged();
-      }
+        onAruChanged:{
+            console.log("00000000000000")
+            aruchanged();
+        }
     }
 
     //  compteur
     Rectangle{
-        x: 281
-        y: 384
-        width: 237
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: height * -1
+        width: 100
         height: 42
 
-        Label {
-        id: co1
-        x: 56
-        y: 5
-        text: grafcet.C1
-        horizontalAlignment: Text.AlignHCenter
-        font.pointSize: 20
+        Row {
+            //anchors.fill: parent
+            anchors.horizontalCenter: parent.horizontalCenter
+            spacing: 10
+            Text {
+                id: text1
+                anchors.verticalCenter: parent.verticalCenter
+                text: qsTr("CMP:")
+                font.bold: true
+                font.pixelSize: 17
+            }
+
+            Label {
+                id: co1
+                anchors.verticalCenter: parent.verticalCenter
+                text: grafcet.C1
+                horizontalAlignment: Text.AlignHCenter
+                font.pointSize: 20
 
 
+            }
+
+
+        }
+
+        MouseArea{
+            anchors.fill: parent
+            //onClicked: grafcet.C1=0
+            onDoubleClicked: grafcet.C1=0
+
+        }
     }
-    Text {
-        id: text1
-        x: 8
-        y: 12
-        text: qsTr("CMP:")
-        font.bold: true
-        font.pixelSize: 17
-    }
-    MouseArea{
 
-        anchors.fill: parent
-        //onClicked: grafcet.C1=0
-        onDoubleClicked: grafcet.C1=0
-
-    }
-}
-
-// gestion marche / arret
+    // gestion marche / arret
 
     MouseArea{
         id: stopp
@@ -101,21 +108,21 @@ PathView {
         y: 0
         onClicked: {stopp.visible=false; power.visible = true; grafcet.HMarche=true }
 
-    Image {
-        id: stop
-        visible: true
-        width: 100
-        height: 100
-        source: "../images/Reload0.png"
-    }
-    Text {
-        x: 22
-        y: 41
-
-        text: qsTr("START")
-        font.bold: true
-    }
+        Image {
+            id: stop
+            visible: true
+            width: 100
+            height: 100
+            source: "../images/Reload0.png"
         }
+        Text {
+            x: 22
+            y: 41
+
+            text: qsTr("START")
+            font.bold: true
+        }
+    }
 
     MouseArea{
         id: power
@@ -128,26 +135,26 @@ PathView {
         onClicked: {stopp.visible=true; power.visible = false ; grafcet.HMarche=false }
 
 
-            AnimatedImage {
-                id : run
-                visible: true
-                width: 100
-                height: 100
-                source: "../images/Reload.gif"
-            }
-            Text {
-                x: 26
-                y: 41
+        AnimatedImage {
+            id : run
+            visible: true
+            width: 100
+            height: 100
+            source: "../images/Reload.gif"
+        }
+        Text {
+            x: 26
+            y: 41
 
-                text: qsTr("STOP")
-                font.bold: true
-            }
-
+            text: qsTr("STOP")
+            font.bold: true
         }
 
+    }
 
 
-// button shudown Pi
+
+    // button shudown Pi
 
     Image {
         id: off
@@ -174,7 +181,7 @@ PathView {
         }
 
 
-}
+    }
 
 
 
@@ -182,64 +189,64 @@ PathView {
     // gestion defaut ( secu reperage / echenlliage )
 
     Connections{
-    target: grafcet
+        target: grafcet
 
-    onDreperageChanged : {
+        onDreperageChanged : {
 
-        if(grafcet.dreperage==true){
-            click_warning_rep.visible=true;
-            stopp.visible=true; power.visible = false ; grafcet.HMarche=false ; stopp.enabled =false
+            if(grafcet.dreperage==true){
+                click_warning_rep.visible=true;
+                stopp.visible=true; power.visible = false ; grafcet.HMarche=false ; stopp.enabled =false
+            }
+
+            else{
+                click_warning_rep.visible =false;
+                stopp.enabled =true
+            }
+
+
         }
 
-        else{
-            click_warning_rep.visible =false;
-            stopp.enabled =true
+        onDechenlliageChanged:{
+
+            if(grafcet.dechenlliage==true){
+
+                console.log("echenlliage time out")
+                click_warning_ech.visible=true;
+                stopp.visible=true; power.visible = false ; grafcet.HMarche=false ; stopp.enabled =false
+            }
+
+            else{
+                click_warning_ech.visible =false;
+                stopp.enabled =true
+            }
         }
 
 
     }
 
-    onDechenlliageChanged:{
-
-        if(grafcet.dechenlliage==true){
-
-            console.log("echenlliage time out")
-            click_warning_ech.visible=true;
-            stopp.visible=true; power.visible = false ; grafcet.HMarche=false ; stopp.enabled =false
-        }
-
-        else{
-            click_warning_ech.visible =false;
-            stopp.enabled =true
-        }
-    }
-
-
-    }
-
-        MouseArea{
+    MouseArea{
         id:click_warning_rep
 
-         x: 535
-            y: 315
-            width: 265
-            height: 111
-            visible: false
-            enabled: true
-            onClicked: { console.log("out warning rep"); grafcet.dreperage=false}
-        }
+        x: 535
+        y: 315
+        width: 265
+        height: 111
+        visible: false
+        enabled: true
+        onClicked: { console.log("out warning rep"); grafcet.dreperage=false}
+    }
 
-        MouseArea{
+    MouseArea{
         id:click_warning_ech
 
-         x: 535
-            y: 315
-            width: 265
-            height: 111
-            visible: false
-            enabled: true
-            onClicked: { console.log("out warning ech"); grafcet.dechenlliage=false}
-        }
+        x: 535
+        y: 315
+        width: 265
+        height: 111
+        visible: false
+        enabled: true
+        onClicked: { console.log("out warning ech"); grafcet.dechenlliage=false}
+    }
 
 
 
