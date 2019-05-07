@@ -2,7 +2,7 @@
 #define MYGPIO_H
 #include <QObject>
 #include "mypropertyhelper.h"
-#include "wiringPi.h"
+//#include "wiringPi.h"
 #include <QProcess>
 
 
@@ -33,18 +33,18 @@ public:
 
      //AUTO_PROPERTY(bool , HMarche)   // marche machine
 
-    INPUT_GPIO_PROPERTY(detProduit, 2)
-    INPUT_GPIO_PROPERTY(repEtiq, 3)
-    INPUT_GPIO_PROPERTY(repCran, 4)
-    INPUT_GPIO_PROPERTY(echenillageP1, 5)
-    INPUT_GPIO_PROPERTY(echenillageP2, 10)
-    INPUT_GPIO_PROPERTY(aru, 31)
+    AUTO_PROPERTY(bool, detProduit)
+    AUTO_PROPERTY(bool, repEtiq)
+    AUTO_PROPERTY(bool, repCran)
+    AUTO_PROPERTY(bool, echenillageP1)
+    AUTO_PROPERTY(bool, echenillageP2)
+    AUTO_PROPERTY(bool, aru)
 
 
-    OUTPUT_GPIO_PROPERTY(marche, 22)
-    OUTPUT_GPIO_PROPERTY(moteur1, 23)
-    OUTPUT_GPIO_PROPERTY(moteur2, 25)
-    OUTPUT_GPIO_PROPERTY(lisseur, 26)
+    AUTO_PROPERTY(bool, marche)
+    AUTO_PROPERTY(bool, moteur1)
+    AUTO_PROPERTY(bool, moteur2)
+    AUTO_PROPERTY(bool, lisseur)
 
 private:
     QProcess process;

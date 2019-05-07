@@ -59,7 +59,7 @@
 #include <QDebug>
 #include <QtCore>
 #include "mythread.h"
-#include "wiringPi.h"
+//#include "wiringPi.h"
 #include "fonctiongrafcet.h"
 
 

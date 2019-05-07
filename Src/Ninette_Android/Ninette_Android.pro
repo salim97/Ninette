@@ -48,10 +48,6 @@ TEMPLATE = app
 #name of the executable file
 TARGET = Ninette
 
-#by khaled ....
-INCLUDEPATH += / usr / local / include
-LIBS += -L/opt/qt5pi/sysroot/usr/lib -lwiringPi
-
 #--------------------------------------------------------
 
 # The following define makes your compiler emit warnings if you use
@@ -67,7 +63,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 
-
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
 
@@ -76,8 +71,5 @@ QML_DESIGNER_IMPORT_PATH =
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /home/pi/$${TARGET}/bin
+else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-
-

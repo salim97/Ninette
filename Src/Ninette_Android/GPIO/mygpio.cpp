@@ -24,7 +24,7 @@ MyGPIO *myGPIO;
 MyGPIO::MyGPIO(QObject *parent) : QObject(parent)
 {
 
-
+/*
     wiringPiSetup();
     myGPIO = this ;// use for input connection
     pinMode(pin_detProduit, INPUT);// use for input connection
@@ -67,7 +67,7 @@ MyGPIO::MyGPIO(QObject *parent) : QObject(parent)
     readAllGPIO();
 
 
-
+*/
 
 
 }
@@ -75,6 +75,7 @@ MyGPIO::MyGPIO(QObject *parent) : QObject(parent)
 
 void MyGPIO::readAllGPIO() // use for input connection  // when the state change 0 to 1 or 1 to 0 for all gpio input , this function start
 {
+    /*
    //  detProduit(digitalRead(pin_detProduit));
 //    detProduit()==0;
 
@@ -190,6 +191,7 @@ void MyGPIO::readAllGPIO() // use for input connection  // when the state change
 
 
     aru(digitalRead(pin_aru));
+    */
 
 }
 
