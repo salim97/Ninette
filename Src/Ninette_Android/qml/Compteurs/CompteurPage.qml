@@ -9,7 +9,7 @@ import QtQuick.Controls 1.4
 Item {
 
 
-    width: 800
+   // width: 800
 
 
 

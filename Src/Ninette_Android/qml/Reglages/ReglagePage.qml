@@ -64,8 +64,7 @@ import Qt.labs.settings 1.0
 
 Item {
 
-    width: 800
-    height: 480
+    anchors.fill: parent
 
 
 

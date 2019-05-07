@@ -7,7 +7,7 @@ import Qt.labs.settings 1.0
 import "../Style"
 
 Item {
-    width: 800
+    //width: 800
 
 
     SwipeView {
