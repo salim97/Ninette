@@ -12,10 +12,10 @@ Item {
 
      property string  v_source: ""
     // property string ve1: "file:/home/pi/Videos/1-Elements_Ninette.mp4"
-  //   property string ve1: "https://youtu.be/w2RRgRGHsDA"
-   // property string ve1: "file:///stockage interne/DCIM/Tutoriel Ninette/1.MP4"
 
-     property string ve1: "file://storage/emulated/0/DCIM/Tutoriel Ninette/1.mp4"
+
+
+     property string ve1: "file:///storage/emulated/0/DCIM/Tutoriel Ninette/1.MP4"
 
 //     property string ve2: "file:/home/pi/Videos/2-Demarrage_de_la_machine.mp4"
 //     property string ve3: "file:/home/pi/Videos/3_Mise_en_place_bande_detiquettes.mp4"
