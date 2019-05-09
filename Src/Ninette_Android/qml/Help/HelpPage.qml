@@ -14,8 +14,11 @@ Item {
     // property string ve1: "file:/home/pi/Videos/1-Elements_Ninette.mp4"
 
 
+     //Khaled
+     //property string ve1: "file:///storage/emulated/0/DCIM/Tutoriel Ninette/1.MP4"
 
-     property string ve1: "file:///storage/emulated/0/DCIM/Tutoriel Ninette/1.MP4"
+    //Salim
+     property string ve1: "file:///storage/emulated/0/BOOKS/What Every Body Is Saying/5 Books That'll Change Your Life _ Book Recommendations _ Doctor Mike.mp4"
 
 //     property string ve2: "file:/home/pi/Videos/2-Demarrage_de_la_machine.mp4"
 //     property string ve3: "file:/home/pi/Videos/3_Mise_en_place_bande_detiquettes.mp4"
