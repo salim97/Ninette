@@ -27,6 +27,7 @@ if you want app to be displayed in vnc window, you need to execute this :
 
 
 # author
-Sebabiban Khaled
+Salim Benabadji
+Khaled Sebabiban 
 
-TO DO ... add more ...
+
